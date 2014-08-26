@@ -1,0 +1,1 @@
+[19-Feb-2009 17:51:35] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'puertasd'@'localhost' (using password: NO) in /home/puertasd/public_html/codeka/login/dbc.php on line 3

@@ -1,0 +1,7 @@
+[19-Jan-2009 21:02:22] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/puertasd/public_html/codeka/proveedores/index.php on line 143
+[19-Jan-2009 21:02:29] PHP Warning:  mysql_result(): supplied argument is not a valid MySQL result resource in /home/puertasd/public_html/codeka/proveedores/rejilla.php on line 23
+[19-Jan-2009 21:08:26] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/puertasd/public_html/codeka/proveedores/index.php on line 143
+[19-Jan-2009 21:08:27] PHP Warning:  mysql_result(): supplied argument is not a valid MySQL result resource in /home/puertasd/public_html/codeka/proveedores/rejilla.php on line 23
+[19-Jan-2009 21:08:44] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/puertasd/public_html/codeka/proveedores/nuevo_proveedor.php on line 63
+[19-Jan-2009 21:08:44] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/puertasd/public_html/codeka/proveedores/nuevo_proveedor.php on line 79
+[23-Jan-2009 09:33:58] PHP Warning:  mysql_result() [<a href='function.mysql-result'>function.mysql-result</a>]: Unable to jump to row 0 on MySQL result index 5 in /home/puertasd/public_html/codeka/proveedores/ver_proveedor.php on line 65

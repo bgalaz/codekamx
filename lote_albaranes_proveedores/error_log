@@ -1,0 +1,3 @@
+[16-Mar-2009 09:21:56] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/puertasd/public_html/codeka/lote_albaranes_proveedores/configurar_lote.php on line 52
+[16-Mar-2009 09:38:44] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/puertasd/public_html/codeka/lote_albaranes_proveedores/configurar_lote.php on line 52
+[02-Apr-2009 09:10:05] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/ppercl/public_html/codeka/lote_albaranes_proveedores/configurar_lote.php on line 52
