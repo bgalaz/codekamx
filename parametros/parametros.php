@@ -893,9 +893,11 @@
  * 
 */
 
-$conn = mysql_connect("servidor", "usuario", "contraseña");
 
-  mysql_select_db("basededatos");
+include ("../config.php");  
+$conn = mysql_connect($Servidor, $Usuario, $Password);
+
+  mysql_select_db($BaseDeDatos);
 
   return $conn;
 

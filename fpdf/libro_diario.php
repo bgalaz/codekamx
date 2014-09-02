@@ -10,8 +10,10 @@ $fechainicio=$_GET["fechainicio"];
 if ($fechainicio<>"") { $fechainicio=explota($fechainicio); }
 $fechafin=$_GET["fechafin"];
 if ($fechafin<>"") { $fechafin=explota($fechafin); }
+if ($_GET["cadena_busqueda"]) {
+	$cadena_busqueda=$_GET["cadena_busqueda"];
+}
 
-$cadena_busqueda=$_GET["cadena_busqueda"];
 
 $where="1=1";
 if (($fechainicio<>"") and ($fechafin<>"")) {
@@ -43,7 +45,7 @@ $pdf->SetX(0);
     
 $titulo="Libro Diario de ";
 if ($paginas2==2) {$titulo.="Ventas";} else {$titulo.="Compras";}
-$pdf->MultiCell(220,6,$titulo,0,C,0);
+$pdf->MultiCell(220,6,$titulo,0,'C',0);
 
 $pdf->Ln();    
 	

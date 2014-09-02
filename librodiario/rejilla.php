@@ -78,7 +78,7 @@ $filas=mysql_result($rs_busqueda,0,"filas");
 			<table class="fuente8" width="100%" cellspacing=0 cellpadding=3 border=0 ID="Table1">
 			<form name="form1" id="form1">
 			<input type="hidden" name="numfilas" id="numfilas" value="<?php echo $filas?>">
-				<?	if ($filas > 0) { ?>
+				<?php	if ($filas > 0) { ?>
 						<?php $sel_resultado="SELECT librodiario.*,formapago.nombrefp FROM librodiario LEFT JOIN formapago ON librodiario.codformapago=formapago.codformapago WHERE ".$where;
 							$res_resultado=mysql_query($sel_resultado);
 							$contador=0;					   

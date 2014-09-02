@@ -7,9 +7,9 @@ class PDF extends FPDF
 function Header($imagenfacguia,$equis,$yy,$anch,$alt)
 {
     //Logo
-    //$this->Image('./logo/logo.jpg',20,8,150);
+    $this->Image('./logo/logo.jpg',20,8,150);
 
-	$this->Image('./logo/' . $imagenfacguia, $equis, $yy, $anch, $alt);
+	//$this->Image('./logo/' . $imagenfacguia, $equis, $yy, $anch, $alt);
 	$this->Ln(5);	
 }
 
