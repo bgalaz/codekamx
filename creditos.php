@@ -20,7 +20,7 @@
 <table width="90%" border="0" align="center">
   <tr height="200px">
     <td>&nbsp;</td>
-    <td><div align="center"><img src="img/codekamx.png" width="550" height="200" border="0" /></div></td>
+    <td><div align="center"><img src="img/codekacl.png" width="550" height="200" border="0" /></div></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
