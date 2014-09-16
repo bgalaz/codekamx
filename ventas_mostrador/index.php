@@ -77,7 +77,7 @@ if ($setnumfac==1)
 				total=precio*cantidad;
 				descuento=total*descuento;
 				total=total-descuento;
-				var original=parseFloat(total);
+				var original=parseInt(total);
 				var result=Math.round(original*100)/100 ;
 				document.getElementById("importe").value=result;
 			}
@@ -136,7 +136,7 @@ if ($setnumfac==1)
 				if (mensaje!="") {
 					alert("Atencion, se han detectado las siguientes incorrecciones:\n\n"+mensaje);
 				} else {
-					document.getElementById("baseimponible").value=parseFloat(document.getElementById("baseimponible").value) + parseFloat(document.getElementById("importe").value);	
+					document.getElementById("baseimponible").value=parseInt(document.getElementById("baseimponible").value) + parseInt(document.getElementById("importe").value);	
 					cambio_iva();
 					document.getElementById("formulario_lineas").submit();
 					document.getElementById("codbarras").value="";
@@ -155,15 +155,15 @@ if ($setnumfac==1)
 			}
 			
 		function cambio_iva() {
-			var original=parseFloat(document.getElementById("baseimponible").value);
+			var original=parseInt(document.getElementById("baseimponible").value);
 			var result=Math.round(original*100)/100 ;
 			document.getElementById("baseimponible").value=result;
 	
-			document.getElementById("baseimpuestos").value=parseFloat(result * parseFloat(document.getElementById("iva").value / 100));
-			var original1=parseFloat(document.getElementById("baseimpuestos").value);
+			document.getElementById("baseimpuestos").value=parseInt(result * parseInt(document.getElementById("iva").value / 100));
+			var original1=parseInt(document.getElementById("baseimpuestos").value);
 			var result1=Math.round(original1*100)/100 ;
 			document.getElementById("baseimpuestos").value=result1;
-			var original2=parseFloat(result + result1);
+			var original2=parseInt(result + result1);
 			var result2=Math.round(original2*100)/100 ;
 			document.getElementById("preciototal").value=result2;
 			}	

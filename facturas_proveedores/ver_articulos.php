@@ -74,9 +74,9 @@ $codproveedor=$_GET["codproveedor"];
 			  { 
 			  	if ($anterior==$rowfamilia[0]) { ?>
 					<option value="<?php echo $rowfamilia[0]?>" selected><?php echo utf8_encode($rowfamilia[1])?></option>
-			<?	} else { ?>
+			<?php	} else { ?>
 					<option value="<?php echo $rowfamilia[0]?>"><?php echo utf8_encode($rowfamilia[1])?></option>
-			<?	}   
+			<?php	}   
 		   	  };
 		  ?>
 	    </select>		</td></tr>

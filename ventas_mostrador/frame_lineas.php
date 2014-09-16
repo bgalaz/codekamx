@@ -2,16 +2,16 @@
 function eliminar_linea(codfacturatmp,numlinea,importe)
 {
 	if (confirm(" Desea eliminar esta linea ? "))
-		parent.document.formulario_lineas.baseimponible.value=parseFloat(parent.document.formulario_lineas.baseimponible.value) - parseFloat(importe);
-		var original=parseFloat(parent.document.formulario_lineas.baseimponible.value);
+		parent.document.formulario_lineas.baseimponible.value=parseInt(parent.document.formulario_lineas.baseimponible.value) - parseInt(importe);
+		var original=parseInt(parent.document.formulario_lineas.baseimponible.value);
 		var result=Math.round(original*100)/100 ;
 		parent.document.formulario_lineas.baseimponible.value=result;
 
-		parent.document.formulario_lineas.baseimpuestos.value=parseFloat(result * parseFloat(parent.document.formulario.iva.value / 100));
-		var original1=parseFloat(parent.document.formulario_lineas.baseimpuestos.value);
+		parent.document.formulario_lineas.baseimpuestos.value=parseInt(result * parseInt(parent.document.formulario.iva.value / 100));
+		var original1=parseInt(parent.document.formulario_lineas.baseimpuestos.value);
 		var result1=Math.round(original1*100)/100 ;
 		parent.document.formulario_lineas.baseimpuestos.value=result1;
-		var original2=parseFloat(result + result1);
+		var original2=parseInt(result + result1);
 		var result2=Math.round(original2*100)/100 ;
 		parent.document.formulario_lineas.preciototal.value=result2;
 		
@@ -71,12 +71,13 @@ for ($i = 0; $i < mysql_num_rows($rs_lineas); $i++) {
 				<td width="9%" class="aCentro"><?php echo $cantidad?></td>
 				<td width="8%" class="aCentro"><?php echo $precio?></td>
 				<td width="7%" class="aCentro"><?php echo $descuento?></td>
-				<td width="6%" class="aCentro"><?php echo number_format($importe,2,".",","); ?></td>
+				<td width="6%" class="aCentro"><?php echo $importe; ?></td>
 				<td width="2%"><a href="javascript:eliminar_linea(<?php echo $codfacturatmp?>,<?php echo $numlinea?>,<?php echo $importe ?>)"><img src="../img/eliminar.png" border="0"></a></td>
 			</tr>
 <?php } 
 
-$baseiva=$baseimp*(number_format($ivaimp,2,".",",")/100);
+//$baseiva=$baseimp*(number_format($ivaimp,2,".",",")/100);
+$baseiva=$baseimp*($ivaimp / 100);
 $preciotot=$baseimp+$baseiva;
 
 ?>
@@ -87,7 +88,7 @@ $preciotot=$baseimp+$baseiva;
 			  <tr>
 			    <td width="70%" class="busqueda"><b>Sub-total</b></td>
 				<td width="30%" align="right"><div align="right"><?php echo $simbolomoneda ?>
-			      <input class="cajaTotales" name="baseimponible" type="text" id="baseimponible" size="12" value="<?php echo number_format($baseimp,2,".",",");?>" align="right" readonly> 
+			      <input class="cajaTotales" name="baseimponible" type="text" id="baseimponible" size="12" value="<?php echo $baseimp;?>" align="right" readonly> 
 		        </div></td>																					 
 	
 
@@ -95,13 +96,13 @@ $preciotot=$baseimp+$baseiva;
 			  <tr>
 				<td class="busqueda"><b>IVA</b></td>
 				<td align="right"><div align="right"><?php echo $simbolomoneda ?>
-			      <input class="cajaTotales" name="baseimpuestos" type="text" id="baseimpuestos" size="12" align="right" value="<?php echo number_format($baseiva,2,".",",");?>" readonly> 
+			      <input class="cajaTotales" name="baseimpuestos" type="text" id="baseimpuestos" size="12" align="right" value="<?php echo $baseiva;?>" readonly> 
 		        </div></td>
 			  </tr>
 			  <tr>
 				<td class="busqueda"><b>Precio Total</b></td>
 				<td align="right"><div align="right"><?php echo $simbolomoneda ?>
-			      <input class="cajaTotales" name="preciototal" type="text" id="preciototal" size="12" align="right" value="<?php echo number_format($preciotot,2,".",",");?>" readonly> 
+			      <input class="cajaTotales" name="preciototal" type="text" id="preciototal" size="12" align="right" value="<?php echo $preciotot;?>" readonly> 
 		        </div></td>
 			  </tr>
 		</table>

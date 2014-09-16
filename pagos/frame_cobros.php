@@ -77,7 +77,7 @@ $filas=mysql_result($rs_busqueda,0,"filas");
 			<div align="center">
 			<table class="fuente8" width="100%" cellspacing=0 cellpadding=3 border=0 ID="Table1">
 			<form name="form1" id="form1">		
-				<?	if ($filas > 0) { ?>
+				<?php	if ($filas > 0) { ?>
 						<?php $sel_resultado="SELECT * FROM facturasp,pagos,proveedores,formapago WHERE pagos.codfactura='$codfactura' AND pagos.codproveedor='$codproveedor' AND pagos.codfactura=facturasp.codfactura AND pagos.codproveedor=proveedores.codproveedor AND pagos.codformapago=formapago.codformapago ORDER BY pagos.id DESC";
 						   $res_resultado=mysql_query($sel_resultado);
 						   $contador=0;				   

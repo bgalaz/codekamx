@@ -8,9 +8,9 @@ CREATE TABLE `albalinea` (
   `numlinea` int(4) NOT NULL auto_increment,
   `codfamilia` int(3) default NULL,
   `codigo` varchar(15) character set utf8 default NULL,
-  `cantidad` decimal(19,4) NOT NULL default '0.0000',
-  `precio` decimal(19,4) NOT NULL default '0.0000',
-  `importe` decimal(19,4) NOT NULL default '0.0000',
+  `cantidad` int(19) NOT NULL default '0.0000',
+  `precio` int(19) NOT NULL default '0.0000',
+  `importe` int(19) NOT NULL default '0.0000',
   `dcto` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`codalbaran`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -25,9 +25,9 @@ CREATE TABLE `albalineap` (
   `numlinea` int(4) NOT NULL auto_increment,
   `codfamilia` int(3) default NULL,
   `codigo` varchar(15) default NULL,
-  `cantidad` decimal(10,0) NOT NULL default '0',
-  `precio` decimal(19,4) NOT NULL default '0.0000',
-  `importe` decimal(19,4) NOT NULL default '0.0000',
+  `cantidad` int(10) NOT NULL default '0',
+  `precio` int(19) NOT NULL default '0.0000',
+  `importe` int(19) NOT NULL default '0.0000',
   `dcto` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`codalbaran`,`codproveedor`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -41,9 +41,9 @@ CREATE TABLE `albalineaptmp` (
   `numlinea` int(4) NOT NULL auto_increment,
   `codfamilia` int(3) default NULL,
   `codigo` varchar(15) default NULL,
-  `cantidad` decimal(19,4) NOT NULL default '0.0000',
-  `precio` decimal(19,4) NOT NULL default '0.0000',
-  `importe` decimal(19,4) NOT NULL default '0.0000',
+  `cantidad` int(19) NOT NULL default '0.0000',
+  `precio` int(19) NOT NULL default '0.0000',
+  `importe` int(19) NOT NULL default '0.0000',
   `dcto` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`codalbaran`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -57,9 +57,9 @@ CREATE TABLE `albalineatmp` (
   `numlinea` int(4) NOT NULL auto_increment,
   `codfamilia` int(3) default NULL,
   `codigo` varchar(15) character set utf8 default NULL,
-  `cantidad` decimal(19,4) NOT NULL default '0.0000',
-  `precio` decimal(19,4) NOT NULL default '0.0000',
-  `importe` decimal(19,4) NOT NULL default '0.0000',
+  `cantidad` int(19) NOT NULL default '0.0000',
+  `precio` int(19) NOT NULL default '0.0000',
+  `importe` int(19) NOT NULL default '0.0000',
   `dcto` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`codalbaran`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -75,7 +75,7 @@ CREATE TABLE `albaranes` (
   `iva` tinyint(4) NOT NULL default '0',
   `codcliente` int(5) default '0',
   `estado` varchar(1) character set utf8 default '1',
-  `totalalbaran` decimal(19,4) NOT NULL,
+  `totalalbaran` int(19) NOT NULL,
   `borrado` varchar(1) NOT NULL default '0',
   PRIMARY KEY  (`codalbaran`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
@@ -91,7 +91,7 @@ CREATE TABLE `albaranesp` (
   `fecha` date NOT NULL default '0000-00-00',
   `iva` tinyint(4) NOT NULL default '0',
   `estado` varchar(1) default '1',
-  `totalalbaran` decimal(19,4) NOT NULL default '0.0000',
+  `totalalbaran` int(19) NOT NULL default '0.0000',
   PRIMARY KEY  (`codalbaran`,`codproveedor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -139,11 +139,11 @@ CREATE TABLE `articulos` (
   `precio_ticket` varchar(1) NOT NULL default '0',
   `modificar_ticket` varchar(1) NOT NULL default '0',
   `observaciones` text NOT NULL,
-  `precio_compra` decimal(19,4) default NULL,
-  `precio_almacen` decimal(19,4) default NULL,
-  `precio_tienda` decimal(19,4) default NULL,
-  `precio_pvp` decimal(19,4) default NULL,
-  `precio_iva` decimal(19,4) default NULL,
+  `precio_compra` int(19) default NULL,
+  `precio_almacen` int(19) default NULL,
+  `precio_tienda` int(19) default NULL,
+  `precio_pvp` int(19) default NULL,
+  `precio_iva` int(19) default NULL,
   `codigobarras` varchar(15) NOT NULL,
   `imagen` varchar(200) NOT NULL,
   `borrado` varchar(1) NOT NULL default '0',
@@ -158,7 +158,7 @@ CREATE TABLE `artpro` (
   `codarticulo` varchar(15) NOT NULL,
   `codfamilia` int(3) NOT NULL,
   `codproveedor` int(5) NOT NULL,
-  `precio` decimal(19,4) NOT NULL,
+  `precio` int(19) NOT NULL,
   PRIMARY KEY  (`codarticulo`,`codfamilia`,`codproveedor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -193,7 +193,7 @@ CREATE TABLE `cobros` (
   `id` int(11) NOT NULL auto_increment,
   `codfactura` int(11) NOT NULL,
   `codcliente` int(5) NOT NULL,
-  `importe` decimal(19,4) NOT NULL,
+  `importe` int(19) NOT NULL,
   `codformapago` int(2) NOT NULL,
   `numdocumento` varchar(30) NOT NULL,
   `fechacobro` date NOT NULL default '0000-00-00',
@@ -232,9 +232,9 @@ CREATE TABLE `factulinea` (
   `numlinea` int(4) NOT NULL auto_increment,
   `codfamilia` int(3) NOT NULL,
   `codigo` varchar(15) NOT NULL,
-  `cantidad` decimal(19,4) NOT NULL,
-  `precio` decimal(19,4) NOT NULL,
-  `importe` decimal(19,4) NOT NULL,
+  `cantidad` int(19) NOT NULL,
+  `precio` int(19) NOT NULL,
+  `importe` int(19) NOT NULL,
   `dcto` tinyint(4) NOT NULL,
   PRIMARY KEY  (`codfactura`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='lineas de facturas a clientes';
@@ -249,9 +249,9 @@ CREATE TABLE `factulineap` (
   `numlinea` int(4) NOT NULL auto_increment,
   `codfamilia` int(3) NOT NULL,
   `codigo` varchar(15) NOT NULL,
-  `cantidad` decimal(19,4) NOT NULL,
-  `precio` decimal(19,4) NOT NULL,
-  `importe` decimal(19,4) NOT NULL,
+  `cantidad` int(19) NOT NULL,
+  `precio` int(19) NOT NULL,
+  `importe` int(19) NOT NULL,
   `dcto` tinyint(4) NOT NULL,
   PRIMARY KEY  (`codfactura`,`codproveedor`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='lineas de facturas de proveedores';
@@ -265,9 +265,9 @@ CREATE TABLE `factulineaptmp` (
   `numlinea` int(4) NOT NULL auto_increment,
   `codfamilia` int(3) NOT NULL,
   `codigo` varchar(15) NOT NULL,
-  `cantidad` decimal(19,4) NOT NULL,
-  `precio` decimal(19,4) NOT NULL,
-  `importe` decimal(19,4) NOT NULL,
+  `cantidad` int(19) NOT NULL,
+  `precio` int(19) NOT NULL,
+  `importe` int(19) NOT NULL,
   `dcto` tinyint(4) NOT NULL,
   PRIMARY KEY  (`codfactura`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='lineas de facturas de proveedores temporal';
@@ -281,9 +281,9 @@ CREATE TABLE `factulineatmp` (
   `numlinea` int(4) NOT NULL auto_increment,
   `codfamilia` int(3) NOT NULL,
   `codigo` varchar(15) NOT NULL,
-  `cantidad` decimal(19,4) NOT NULL,
-  `precio` decimal(19,4) NOT NULL,
-  `importe` decimal(19,4) NOT NULL,
+  `cantidad` int(19) NOT NULL,
+  `precio` int(19) NOT NULL,
+  `importe` int(19) NOT NULL,
   `dcto` tinyint(4) NOT NULL,
   PRIMARY KEY  (`codfactura`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Temporal de linea de facturas a clientes';
@@ -298,7 +298,7 @@ CREATE TABLE `facturas` (
   `iva` tinyint(4) NOT NULL,
   `codcliente` int(5) NOT NULL,
   `estado` varchar(1) NOT NULL default '0',
-  `totalfactura` decimal(19,4) NOT NULL,
+  `totalfactura` int(19) NOT NULL,
   `fechavencimiento` date NOT NULL default '0000-00-00',
   `borrado` varchar(1) NOT NULL default '0',
   PRIMARY KEY  (`codfactura`)
@@ -314,7 +314,7 @@ CREATE TABLE `facturasp` (
   `fecha` date NOT NULL,
   `iva` tinyint(4) NOT NULL,
   `estado` varchar(1) NOT NULL default '0',
-  `totalfactura` decimal(19,4) NOT NULL,
+  `totalfactura` int(19) NOT NULL,
   `fechapago` date NOT NULL default '0000-00-00',
   `borrado` varchar(1) NOT NULL default '0',
   PRIMARY KEY  (`codfactura`,`codproveedor`)
@@ -369,7 +369,7 @@ DROP TABLE IF EXISTS `impuestos`;
 CREATE TABLE `impuestos` (
   `codimpuesto` int(3) NOT NULL auto_increment,
   `nombre` varchar(20) default NULL,
-  `valor` decimal(19,4) NOT NULL,
+  `valor` int(19) NOT NULL,
   `borrado` varchar(1) NOT NULL default '0',
   PRIMARY KEY  (`codimpuesto`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='tipos de impuestos';
@@ -386,7 +386,7 @@ CREATE TABLE `librodiario` (
   `codcomercial` int(5) NOT NULL,
   `codformapago` int(2) NOT NULL,
   `numpago` varchar(30) NOT NULL,
-  `total` decimal(19,4) NOT NULL,
+  `total` int(19) NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COMMENT='Movimientos diarios';
 
@@ -398,7 +398,7 @@ CREATE TABLE `pagos` (
   `id` int(11) NOT NULL auto_increment,
   `codfactura` varchar(20) NOT NULL,
   `codproveedor` int(5) NOT NULL,
-  `importe` decimal(19,4) NOT NULL,
+  `importe` int(19) NOT NULL,
   `codformapago` int(2) NOT NULL,
   `numdocumento` varchar(30) NOT NULL,
   `fechapago` date default '0000-00-00',
@@ -423,7 +423,7 @@ CREATE TABLE `parametros` (
   `fondoguia` text,
   `imagenguia` varchar(30) default NULL,
   `filasdetallefactura` int(2) default NULL,
-  `ivaimp` decimal(2,0) default NULL,
+  `ivaimp` int(2) default NULL,
   `nombremoneda` varchar(20) default NULL,
   `simbolomoneda` varchar(20) default NULL,
   `codigomoneda` varchar(10) default NULL,

@@ -105,12 +105,11 @@ function sale(){
 					  	<td width="34%"align="right"><input name="foto" type="file" id="foto" accept="image/jpg" align="right"> </td>
 					    <td width="20%"align="right"> <input name="submit" type="submit" value="Cargar Imagen" class="cajaP" align="right"> </td>
 					  </tr>
-								<meta http-equiv="refresh" content="1020;URL=http://www.reggnetwork.net" />
 					</table>
 					</form>
 			    </div>
 				<div id="botonBusqueda">
-							<img src="../img/botonvolver.jpg" width="85" height="22" onClick="cancelar()" border="1" onMouseOver="style.cursor=cursor">					
+							<img src="../img/botonvolver.png" width="85" height="22" onClick="cancelar()" border="1" onMouseOver="style.cursor=cursor">					
 			    </div>
 			 	</div>				
 		  

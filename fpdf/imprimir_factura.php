@@ -12,7 +12,6 @@ $pdf=new PDF();
 $pdf->Open();
 $pdf->AddPage();
 if ($fondofac=="SI") $pdf->Header($imagenfac,0,0,205,295);
-
 $codfactura=$_GET["codfactura"];
   
 $consulta = "Select * from facturas,clientes where facturas.codfactura='$codfactura' and facturas.codcliente=clientes.codcliente";

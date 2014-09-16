@@ -75,7 +75,7 @@ $filas=mysql_result($rs_busqueda,0,"filas");
 			<table class="fuente8" width="100%" cellspacing=0 cellpadding=3 border=0 ID="Table1">
 			<form name="form1" id="form1">
 			<input type="hidden" name="numfilas" id="numfilas" value="<?php echo $filas?>">
-				<?	if ($filas > 0) { ?>
+				<?php	if ($filas > 0) { ?>
 						<?php $sel_resultado="SELECT distinct facturas.codfactura,facturas.fecha as fecha,totalfactura,estado,fechavencimiento,clientes.nombre as nombre FROM facturas LEFT JOIN cobros ON facturas.codfactura=cobros.codfactura INNER JOIN clientes ON facturas.codcliente=clientes.codcliente WHERE facturas.borrado=0 AND ".$where;
 						   $res_resultado=mysql_query($sel_resultado);
 						   $contador=0;					   

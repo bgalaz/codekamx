@@ -28,7 +28,7 @@ function actualizarimporte() {
 	var importevale=document.getElementById("importevale").value;
 	if( importevale.search('[^0-9.]') == -1 ) 
 		{
-			var resta=parseFloat(importe-importevale);
+			var resta=parseInt(importe-importevale);
 			var valor=Math.round(resta*100)/100 ;
 			document.getElementById("apagar").value=valor;
 		} else {
@@ -41,7 +41,7 @@ function actualizarimportedevolver() {
 	var pagado=document.getElementById("pagado").value;
 	if( pagado.search('[^0-9.]') == -1 ) 
 		{
-			var resta=parseFloat(pagado-importe);
+			var resta=parseInt(pagado-importe);
 			var valor=Math.round(resta*100)/100 ;
 			
 			// En ventas de mostrador solo se permiten pagos totales.

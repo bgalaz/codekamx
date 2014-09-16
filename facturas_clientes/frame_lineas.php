@@ -80,7 +80,7 @@ $preciotot=$baseimp+$baseiva; ?>
 			  <tr>
 			    <td width="70%" class="busqueda"><b>Sub-total</b></td>
 				<td width="30%" align="right"><div align="right"><?php echo $simbolomoneda ?>
-			      <input class="cajaTotales" name="baseimponible" type="text" id="baseimponible" size="12" value="<?echo number_format($baseimp,1,",",".");?>" align="right" readonly> 
+			      <input class="cajaTotales" name="baseimponible" type="text" id="baseimponible" size="12" value="<?php echo number_format($baseimp,1,",",".");?>" align="right" readonly> 
 		        </div></td>																					 
 	
 

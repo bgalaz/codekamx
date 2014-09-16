@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.5.37, for debian-linux-gnu (i686)
 --
--- Host: localhost    Database: codekamx
+-- Host: localhost    Database: codekacl
 -- ------------------------------------------------------
 -- Server version	5.5.37-0ubuntu0.13.10.1
 
